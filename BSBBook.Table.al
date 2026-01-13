@@ -1,3 +1,6 @@
+/// <summary>
+/// Table BSB Book (ID 50100). Mastertable für Bücher
+/// </summary>
 table 50100 "BSB Book"
 {
     Caption = 'Book';
