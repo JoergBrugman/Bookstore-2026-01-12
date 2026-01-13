@@ -4,12 +4,14 @@
     "al.enableCodeAnalysis": true,
     "al.codeAnalyzers": [
         "${CodeCop}",
+        "${UICop}",
         "${PerTenantExtensionCop}",
-        "${UICop}"
+        "${analyzerFolder}BusinessCentral.LinterCop.dll"
     ],
     "CRS.FileNamePattern": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "CRS.FileNamePatternExtensions": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "CRS.OnSaveAlFileAction": "Rename",
-    "CRS.ObjectNamePrefix": "BSB "
+    "CRS.ObjectNamePrefix": "BSB ",
+    "CRS.WebServerInstancePort": "8080"
 }
