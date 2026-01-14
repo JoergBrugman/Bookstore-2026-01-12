@@ -18,5 +18,13 @@ pageextension 50100 "BSB Customer Card" extends "Customer Card"
                 }
             }
         }
+        addafter(Control149)
+        {
+            part(BSBBookFactbox; "BSB Book Factbox")
+            {
+                SubPageLink = "No." = field("BSB Favorite Book No.");
+                ApplicationArea = All;
+            }
+        }
     }
 }

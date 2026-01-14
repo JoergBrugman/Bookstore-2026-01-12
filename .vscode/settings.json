@@ -13,5 +13,6 @@
     "CRS.FileNamePatternPageCustomizations": "<ObjectNameShort>.<ObjectTypeShortPascalCase>.al",
     "CRS.OnSaveAlFileAction": "Rename",
     "CRS.ObjectNamePrefix": "BSB ",
-    "CRS.WebServerInstancePort": "8080"
+    "CRS.WebServerInstancePort": "8080",
+    "alOutline.completionProviders": ["VariableNamesWithType"]
 }

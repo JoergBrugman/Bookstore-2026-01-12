@@ -6,7 +6,6 @@ table 50100 "BSB Book"
     Caption = 'Book';
     DataCaptionFields = "No.", Description;
     LookupPageId = "BSB Book List";
-
     fields
     {
         field(1; "No."; Code[20])
@@ -131,7 +130,55 @@ table 50100 "BSB Book"
         Error(OnDeleteBookErr);
     end;
 
+    /// <summary>
+    /// Function checks the blocked state on base of Rec.
+    /// </summary>
+    procedure TestBlocked()
+    begin
+        TestBlocked(Rec);
+    end;
+
+    /// <summary>
+    /// Function checks the blocked state on base of a record-variable read by the given code
+    /// </summary>
+    /// <param name="BSBFavoriteBookNo">Code[20].</param>
+    procedure TestBlocked(BSBFavoriteBookNo: Code[20])
+    var
+        BSBBook: Record "BSB Book";
+    begin
+        if BSBFavoriteBookNo = '' then
+            exit;
+        BSBBook.Get(BSBFavoriteBookNo);
+        TestBlocked(BSBBook);
+    end;
+
+    local procedure TestBlocked(BSBBook: Record "BSB Book")
+    begin
+        BSBBook.TestField(Blocked, false);
+    end;
+
     //[x] Ein Buch darf nicht gelöscht werden
-    //TODO TestBlockeed()-Funktion
+    //[x] TestBlockeed()-Funktion
+
+    procedure ShowCard()
+    begin
+        if Rec.IsEmpty then
+            exit;
+        ShowCard(Rec);
+    end;
+
+    procedure ShowCard(BookNo: Code[20])
+    var
+        BSBBook: Record "BSB Book";
+    begin
+        if not BSBBook.Get(BookNo) then
+            exit;
+        ShowCard(BSBBook);
+    end;
+
+    local procedure ShowCard(BSBBook: Record "BSB Book")
+    begin
+        Page.RunModal(Page::"BSB Book Card", BSBBook);
+    end;
 
 }
