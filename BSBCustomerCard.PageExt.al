@@ -27,4 +27,24 @@ pageextension 50100 "BSB Customer Card" extends "Customer Card"
             }
         }
     }
+    actions
+    {
+        addlast(processing)
+        {
+            action("BSB ProcessPipeline")
+            {
+                Caption = 'Process Pipeline';
+                Image = Process;
+                ApplicationArea = All;
+
+                trigger OnAction()
+                var
+                    BSBCustBookCheckPipeline: Codeunit "BSB Cust Book Check Pipeline";
+                begin
+                    BSBCustBookCheckPipeline.ProcessPipeline(Rec);
+                end;
+
+            }
+        }
+    }
 }

@@ -35,4 +35,8 @@ tableextension 50100 "BSB Customer" extends Customer
             ToolTip = 'Specifies the value of the Favorite Book Description field.', Comment = '%';
         }
     }
+    keys
+    {
+        key(K50100; "BSB Favorite Book No.") { }
+    }
 }
