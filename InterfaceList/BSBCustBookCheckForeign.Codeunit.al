@@ -9,7 +9,10 @@ codeunit 50107 "BSB Cust. Book Check Foreign" implements "BSB Cust. Book Check S
     procedure Execute(Customer: Record Customer): Text
     begin
         if Customer."Country/Region Code" <> '' then
-            exit(StrSubstNo('Customer %1 ist ausländisch', Customer."No."));
+            exit(StrSubstNo('Customer %1 ist ausländisch', Customer."No."))
+        else
+            exit(StrSubstNo('Customer %1 ist OK (Inländer)', Customer."No."))
+
     end;
 
     procedure GetSequence(): Integer
