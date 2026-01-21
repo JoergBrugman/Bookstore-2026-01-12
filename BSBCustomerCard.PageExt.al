@@ -25,6 +25,11 @@ pageextension 50100 "BSB Customer Card" extends "Customer Card"
                 SubPageLink = "No." = field("BSB Favorite Book No.");
                 ApplicationArea = All;
             }
+            part(BSBBingMapsCardPart; "BSB BingMapsCardPart")
+            {
+                SubPageLink = "No." = field("No.");
+                ApplicationArea = All;
+            }
         }
     }
     actions
