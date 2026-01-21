@@ -14,5 +14,7 @@
     "CRS.OnSaveAlFileAction": "Rename",
     "CRS.ObjectNamePrefix": "BSB ",
     "CRS.WebServerInstancePort": "8080",
-    "alOutline.completionProviders": ["VariableNamesWithType"]
+    "alOutline.completionProviders": ["VariableNamesWithType"],
+    "xliffSync.parseFromDeveloperNote" : true,
+    "xliffSync.parseFromDeveloperNoteOverwrite": true
 }

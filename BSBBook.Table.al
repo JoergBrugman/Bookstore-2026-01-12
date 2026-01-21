@@ -27,9 +27,9 @@ table 50100 "BSB Book"
         }
         field(3; "Search Description"; Code[100])
         {
-            Caption = 'Search Description';
+            Caption = 'Search Description', Comment = 'de-DE=Suchbeschreibung';
             ToolTip = 'Specifies the value of the Search Description field.', Comment = '%';
-            //[ ] Search Description standardkonform versorgen.
+            //[x] Search Description standardkonform versorgen.
         }
         field(4; Blocked; Boolean)
         {
